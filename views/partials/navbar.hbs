@@ -1,0 +1,74 @@
+<style>
+  #auth-link{
+    position: absolute;
+    right: 50px;
+  }
+
+  #auth-link a{
+    padding: 10px 20px;
+    background-color: rgb(34, 186, 4);
+    color: white;
+    border-radius: 5px;
+    font-size: 17px;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">IT INFO</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul id="navbar" class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link {{#if isDict}} active {{/if}}" aria-current="page" href="/dictionary">Dictionary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{#if isTopic}} active {{/if}}" aria-current="page" href="/topics">Topics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{#if isAuthor}} active {{/if}}" aria-current="page" href="/authors">Authors</a>
+        </li><li class="nav-item">
+          <a class="nav-link {{#if isAdmin}} active {{/if}}" aria-current="page" href="/admin">Admins</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{#if isAdminLogin}} active {{/if}}" aria-current="page" href="/admin_login">Admin Login</a>
+        </li>
+        <li class="nav-item" id="auth-link">
+          <a class="nav-link {{#if isLogin}} active {{/if}}" aria-current="page" href="/login">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<hr/>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const authLink = document.getElementById("auth-link");
+
+    if (isUserLoggedIn()) {
+      authLink.innerHTML = `
+        <a class="nav-link" href="#" onclick="logout()">Logout</a>
+      `;
+    } else {
+      authLink.innerHTML = `
+        <a class="nav-link {{#if isLogin}} active {{/if}}" aria-current="page" href="/login">Login</a>
+      `;
+    }
+  });
+
+  function isUserLoggedIn() {
+    const token = localStorage.getItem("accessToken");
+    return !!token;
+  }
+
+  function logout() {
+    localStorage.removeItem("accessToken");
+    console.log("User logged out successfully!");
+    window.location.href = "/login";
+  }
+</script>

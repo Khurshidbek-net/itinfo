@@ -1,0 +1,58 @@
+2024-12-23T11:13:20.090Z error: Error
+2024-12-23T11:13:49.287Z error: Error
+2024-12-23T11:14:33.045Z error: Error
+2024-12-23T11:15:16.619Z error: Error
+2024-12-23T11:15:19.303Z error: Error
+2024-12-23T11:15:20.344Z error: Error
+2024-12-23T11:16:43.057Z error: Error
+2024-12-23T11:16:44.686Z error: Error
+2024-12-23T11:16:49.722Z error: Error
+2024-12-23T11:16:50.983Z error: Error
+2024-12-23T11:17:02.114Z error: Expected ',' or '}' after property value in JSON at position 80
+2024-12-23T11:17:03.440Z error: Error
+2024-12-23T11:18:47.350Z error: Error
+2024-12-23T11:18:48.488Z error: Error
+2024-12-23T11:19:50.377Z error: Error
+2024-12-23T11:19:59.644Z error: Error
+2024-12-23T11:20:26.691Z error: Error
+2024-12-23T11:20:28.501Z error: Error
+2024-12-23T11:20:30.887Z error: Error
+2024-12-23T11:20:37.951Z error: Error
+2024-12-23T11:21:10.067Z error: Error
+2024-12-23T11:21:12.010Z error: Error
+2024-12-23T11:21:22.891Z error: Error
+2024-12-23T11:21:24.918Z error: Error
+2024-12-23T11:21:26.779Z error: Error
+2024-12-23T11:21:58.670Z error: unhandledRejection: unhandledRejection example
+Error: unhandledRejection example
+    at C:\Users\admin\Desktop\Node js\ITINFO\controllers\author.controller.js:96:14
+    at new Promise (<anonymous>)
+    at loginAuthor (C:\Users\admin\Desktop\Node js\ITINFO\controllers\author.controller.js:95:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-12-23T11:28:59.204Z error: Error
+2024-12-23T11:29:25.512Z error: Error
+2024-12-23T11:29:33.255Z error: Error
+2024-12-23T11:32:04.678Z error: Error
+2024-12-23T11:33:36.178Z error: Error
+2024-12-23T11:43:45.630Z error: Error
+2024-12-23T11:44:42.560Z error: Error
+2024-12-23T11:48:00.888Z error: Error
+2024-12-23T11:48:02.869Z error: Error
+2024-12-23T11:48:05.049Z error: Error
+2024-12-23T11:48:12.837Z error: Error
+2024-12-23T11:48:20.300Z error: Expected ',' or '}' after property value in JSON at position 39
+2024-12-23T11:52:36.382Z error: Error
+2024-12-23T11:52:37.559Z error: Error
+2024-12-23T12:11:22.329Z error: Error
+2024-12-23T12:11:23.679Z error: Error
+2024-12-23T12:46:19.322Z error: Error
+2024-12-23T12:46:21.062Z error: Error
+2024-12-24T03:34:18.285Z error: Error
+2024-12-24T03:34:20.240Z error: Error
+2024-12-24T10:23:05.971Z error: Failed to lookup view "C:\Users\admin\Desktop\Node js\ITINFO\views\author.hbs" in views directory "./views"
+2024-12-24T10:23:12.799Z error: Failed to lookup view "C:\Users\admin\Desktop\Node js\ITINFO\views\author.hbs" in views directory "./views"
+2024-12-24T17:43:54.282Z error: read ECONNRESET
+2024-12-24T17:43:54.288Z error: unhandledRejection: rr is not defined
+ReferenceError: rr is not defined
+    at getAllTerms (C:\Users\admin\Desktop\Node js\ITINFO\controllers\dictionary.controller.js:12:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

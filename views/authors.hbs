@@ -1,0 +1,176 @@
+
+<button type="button" id="btn" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Create new Author
+</button>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Register Author</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="register" class="row g-2">
+          <div class="col-md-6">
+            <label for="first_name" class="form-label">First Name</label>
+            <input type="text" name="first_name" class="form-control" id="first_name">
+          </div>
+          <div class="col-md-6">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input type="text" class="form-control" name="last_name" id="last_name">
+          </div>
+          <div class="col-md-6">
+            <label for="nick_name" class="form-label">Username</label>
+            <input type="text" name="nick_name" class="form-control" id="nick_name">
+          </div>
+          <div class="col-md-6">
+            <label for="phone" class="form-label">Phone number</label>
+            <input type="text" name="phone" class="form-control" placeholder="90-123-45-67" id="phone">
+          </div>
+          <div class="col-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="email">
+          </div>
+          <div class="col-12">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" autocomplete="current-password" id="password">
+          </div>
+          <div class="col-12">
+            <label for="info" class="form-label">Info</label>
+            <textarea type="text" name="info" class="form-control" id="info"></textarea>
+          </div>
+          <div class="col-12">
+            <label for="position"  class="form-label">Position</label>
+            <input type="text" class="form-control" name="position" id="position">
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input name="is_expert" class="form-check-input" type="checkbox" id="is_expert">
+              <label class="form-check-label" for="is_expert">
+                Expert
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-success w-100">Create</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container mt-4">
+    <div id="author-cards" class="row g-4">
+
+    </div>
+</div>
+
+<script>  
+  async function fetchAuthors(){
+    const accessToken = localStorage.getItem("accessToken");
+    
+
+    try{
+      const response = await fetch("http://localhost:4000/api/author",{
+        method:"GET",
+        headers:{
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type":"application/json"
+        },
+        mode: "cors"
+      });
+      if (!response.ok) {       
+          throw new Error("Failed to fetch authors.");
+      }
+
+      const data = await response.json();
+      const cardsContainer = document.getElementById("author-cards");
+
+      for(const author of data.authors) {
+          const card = document.createElement("div");
+          card.className = "col-md-4";
+
+          card.innerHTML = `
+            <div class="card" style="width: 18rem;">
+              <img src="https://st.depositphotos.com/1537427/3571/v/450/depositphotos_35717211-stock-illustration-vector-user-icon.jpg" class="card-img-top" alt="Author Image">
+              <div class="card-body">
+                <h5 class="card-title">${author.first_name} ${author.last_name || ''}</h5>
+                <p class="card-text">${author.info}.</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Email: ${author.email || 'N/A'}</li>
+                <li class="list-group-item">Phone: ${author.phone || 'General'}</li>
+              </ul>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Active: ${author.author_is_active ? '<i class="bi bi-check-circle-fill" style="color: green"></i>' : '<i class="bi bi-x-circle-fill" style="color: crimson;"></i>'} </li>
+                <li class="list-group-item">Expert: ${author.is_expert ? '<i class="bi bi-check-circle-fill" style="color: green"></i>' : '<i class="bi bi-x-circle-fill" style="color: crimson"></i>'}</li>
+              </ul>
+            </div>
+          `;
+          cardsContainer.appendChild(card);
+        };
+    }
+    catch(error){
+      console.error("Error fetching authors:", error.message);
+    }
+
+  }
+
+  async function createAuthor(){
+
+    const form = document.getElementById("register");
+
+    form.addEventListener("submit", async(e) =>{
+      {{!-- e.preventDefault(); --}}
+      const first_name = document.getElementById("first_name").value;
+      const last_name = document.getElementById("last_name").value;
+      const nick_name = document.getElementById("nick_name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const password = document.getElementById("password").value;
+      const info = document.getElementById("info").value;
+      const position = document.getElementById("position").value;
+      const is_expert = document.getElementById("is_expert").checked;
+
+
+      try{
+        const response = await fetch("http://localhost:4000/api/author",{
+          method: "POST",
+          headers:{
+            "Content-Type":"application/json"
+          },
+          body: JSON.stringify({first_name, last_name, nick_name, email, phone, password, info, position, is_expert})
+        });
+
+        if (!response.ok) {
+          const errorDetails = await response.text();
+          throw new Error(`Register failed: ${errorDetails}`);
+        }
+
+        window.alert("Author created successfully");
+        window.location.href = "/";
+      }
+      catch(error){
+        console.log("Error occured while creating a new author: " + error.message);
+      }
+    });
+  }
+  
+  fetchAuthors();
+  createAuthor();
+</script>
+
+
+
+<ol id="author-list"></ol>
+
+<script src="./js/script.js"></script>
+
+<script>
+  getAuthors();
+  checkLoggedIn();
+</script>

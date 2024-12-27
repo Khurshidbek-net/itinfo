@@ -1,0 +1,69 @@
+2024-12-23T11:21:59.670Z error: uncaughtException: UncaughtException
+Error: UncaughtException
+    at Timeout._onTimeout (C:\Users\admin\Desktop\Node js\ITINFO\controllers\author.controller.js:88:21)
+    at listOnTimeout (node:internal/timers:573:17)
+    at process.processTimers (node:internal/timers:514:7)
+2024-12-24T10:52:54.016Z error: uncaughtException: Unexpected token '.'
+C:\Users\admin\Desktop\Node js\ITINFO\controllers\author.controller.js:101
+    res.status(200).send({ message: "Login successfully", tokens.acc });
+                                                                ^
+
+SyntaxError: Unexpected token '.'
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (C:\Users\admin\Desktop\Node js\ITINFO\routes\author.routes.js:1:147)
+    at Module._compile (node:internal/modules/cjs/loader:1369:14)
+2024-12-24T10:52:56.316Z error: uncaughtException: Unexpected token '.'
+C:\Users\admin\Desktop\Node js\ITINFO\controllers\author.controller.js:101
+    res.status(200).send({ message: "Login successfully", tokens.access });
+                                                                ^
+
+SyntaxError: Unexpected token '.'
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (C:\Users\admin\Desktop\Node js\ITINFO\routes\author.routes.js:1:147)
+    at Module._compile (node:internal/modules/cjs/loader:1369:14)
+2024-12-24T17:15:23.425Z error: uncaughtException: listen EADDRINUSE: address already in use :::4000
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1897:16)
+    at listenInCluster (node:net:1945:12)
+    at Server.listen (node:net:2037:7)
+    at Function.listen (C:\Users\admin\Desktop\Node js\ITINFO\node_modules\express\lib\application.js:635:24)
+    at start (C:\Users\admin\Desktop\Node js\ITINFO\app.js:43:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-12-24T17:16:24.883Z error: uncaughtException: listen EADDRINUSE: address already in use :::4000
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1897:16)
+    at listenInCluster (node:net:1945:12)
+    at Server.listen (node:net:2037:7)
+    at Function.listen (C:\Users\admin\Desktop\Node js\ITINFO\node_modules\express\lib\application.js:635:24)
+    at start (C:\Users\admin\Desktop\Node js\ITINFO\app.js:43:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-12-25T11:30:22.859Z error: uncaughtException: missing ) after argument list
+C:\Users\admin\Desktop\Node js\ITINFO\routes\author.routes.js:12
+router.post("/", autho createAuthor);
+                 ^^^^^
+
+SyntaxError: missing ) after argument list
+    at internalCompileFunction (node:internal/vm:128:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1280:20)
+    at Module._compile (node:internal/modules/cjs/loader:1332:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1427:10)
+    at Module.load (node:internal/modules/cjs/loader:1206:32)
+    at Module._load (node:internal/modules/cjs/loader:1022:12)
+    at Module.require (node:internal/modules/cjs/loader:1231:19)
+    at require (node:internal/modules/helpers:179:18)
+    at Object.<anonymous> (C:\Users\admin\Desktop\Node js\ITINFO\routes\index.routes.js:7:21)
+    at Module._compile (node:internal/modules/cjs/loader:1369:14)

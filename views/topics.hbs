@@ -1,0 +1,61 @@
+<div class="container mt-5">
+  <h2>Topics Table</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Author</th>
+        <th scope="col">Topic title</th>
+        <th scope="col">Topic text</th>
+        <th scope="col">Expert</th>
+        <th scope="col">Checked</th>
+        <th scope="col">Approved</th>
+      </tr>
+    </thead>
+    <tbody id="terms-table-body">
+    </tbody>
+  </table>
+</div>
+
+  <script>
+    async function fetchTerms() {
+      try {
+        const response = await fetch("http://localhost:4000/api/topic", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch terms.");
+        }
+
+        const topics = await response.json();
+
+        const tableBody = document.getElementById("terms-table-body");
+
+        for(const topic of topics){
+
+          const authorResponse = await fetch(`http://localhost:4000/api/author/${topic.author_id}`);
+          const author = await authorResponse.json();
+
+          console.log(author)
+
+
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${author.author.first_name || "Unknown Author"}</td>
+            <td>${topic.topic_title}</td>
+            <td>${topic.topic_text}</td>
+            <td>${author.author.first_name || "Unknown Expert"}</td>
+            <td>${topic.is_checked ? '<i class="bi bi-check-circle-fill" style="color: green"></i>' : '<i class="bi bi-x-circle-fill" style="color: crimson"></i>'}</td>
+            <td>${topic.is_approved ? '<i class="bi bi-check-circle-fill" style="color: green"></i>' : '<i class="bi bi-x-circle-fill" style="color: crimson"></i>'}</td>
+          `;
+        tableBody.appendChild(row);
+        }
+      } catch (error) {
+        console.error("Error fetching terms:", error.message);
+      }
+    }
+    fetchTerms();
+  </script>

@@ -1,0 +1,49 @@
+
+<div class="container mt-5">
+  <h2>Terms Table</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Index</th>
+        <th scope="col">Term</th>
+        <th scope="col">Letter</th>
+      </tr>
+    </thead>
+    <tbody id="terms-table-body">
+    </tbody>
+  </table>
+</div>
+
+  <script>
+    async function fetchTerms() {
+      try {
+        const response = await fetch("http://localhost:4000/api/dictionary/terms", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch terms.");
+        }
+
+        const data = await response.json();
+
+        const tableBody = document.getElementById("terms-table-body");
+
+        data.terms.forEach((term, index) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <th scope="row">${index + 1}</th>
+            <td>${term.term}</td>
+            <td>${term.letter}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      } catch (error) {
+        console.error("Error fetching terms:", error.message);
+      }
+    }
+    fetchTerms();
+  </script>

@@ -1,0 +1,1463 @@
+{
+	"info": {
+		"_postman_id": "299991a8-ab43-4338-a1b0-8b779b73d2f1",
+		"name": "ITINFO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33216630"
+	},
+	"item": [
+		{
+			"name": "Dictionary",
+			"item": [
+				{
+					"name": "createTerm",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"term\": \"Node js\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/dictionary/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"dictionary",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllTerms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/dictionary/terms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"dictionary",
+								"terms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTermsByLetter",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"letter\": \"J\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/dictionary/terms/letter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"dictionary",
+								"terms",
+								"letter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTerm",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"term\":\"Node js new term\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/dictionary/update/675ac6c52b3be96fcdf1a53f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"dictionary",
+								"update",
+								"675ac6c52b3be96fcdf1a53f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTerm",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/dictionary/delete/675ac6c52b3be96fcdf1a53f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"dictionary",
+								"delete",
+								"675ac6c52b3be96fcdf1a53f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "createCategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_name\":\"de\",\r\n    \"parent_category_id\": \"675bd0dfb0909dc60f574ae4+\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategoryById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/category/675bd0dfb0909dc60f574ae4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"category",
+								"675bd0dfb0909dc60f574ae4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/category/675bd0dfb0909dc60f574ae4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"category",
+								"675bd0dfb0909dc60f574ae4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Description",
+			"item": [
+				{
+					"name": "getAllDesc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/description",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"description"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createDesc",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_id\":\"675bd0dfb0909dc60f574ae4\",\r\n    \"description\": \"This description is written for Hardware category\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/description",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"description"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDescById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/description/675c071de5e0b4829195c34e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"description",
+								"675c071de5e0b4829195c34e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateDesc",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/description/675c071de5e0b4829195c34e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"description",
+								"675c071de5e0b4829195c34e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteDesc",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/description/675c071de5e0b4829195c34e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"description",
+								"675c071de5e0b4829195c34e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Author",
+			"item": [
+				{
+					"name": "getAllAuthors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjE1ZDUwYjhkNDVhNjcxODE3YTJlYyIsImVtYWlsIjoibG9sYUBnbWFpbC5jb20iLCJpc19hY3RpdmUiOmZhbHNlLCJpYXQiOjE3MzQ2MDAzMzIsImV4cCI6MTczNDYwMzkzMn0.FAIFPBy8tCPB1fJGb2p9t5AL8M-b8CQN0Nh4fg9iSpo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAuthor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\":\"Kamol\",\r\n    \"last_name\":\"Po'latov\",\r\n    \"nick_name\":\"Kamol\",\r\n    \"email\":\"kamol@gmail.com\",\r\n    \"phone\":\"93-243-55-32\",\r\n    \"password\":\"kamol123\",\r\n    \"info\":\"This info is about Kamol\",\r\n    \"position\":\"CBO\",\r\n    \"is_expert\": true,\r\n    \"gender\": \"Male\",\r\n    \"birth_date\":\"1990-03-22\",\r\n    \"birth_year\": \"2000\",\r\n    \"referred\": false,\r\n    \"coding_langs\": [\"C++\", \"C\"],\r\n    \"is_yes\": \"yes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAuthorById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjNlNzVhMWEyMDIwYTVhNWEzN2I0NSIsImVtYWlsIjoia2Ftb2xAZ21haWwuY29tIiwiaXNfYWN0aXZlIjpmYWxzZSwiaWF0IjoxNzM0ODgwMjY0LCJleHAiOjE3MzQ5MTYyNjR9.8a1BbC3koPlgsqSm9dTIuLBAW9VN8zX3b_bSOWZQr20",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/author/6763e75a1a2020a5a5a37b45",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"author",
+								"6763e75a1a2020a5a5a37b45"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAuthor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/author/675c304caa1569a1ab70a646",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"author",
+								"675c304caa1569a1ab70a646"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAuthor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/author/675c304caa1569a1ab70a646",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"author",
+								"675c304caa1569a1ab70a646"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginAuthor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjE1ZDUwYjhkNDVhNjcxODE3YTJlYyIsImVtYWlsIjoibG9sYUBnbWFpbC5jb20iLCJpc19hY3RpdmUiOmZhbHNlLCJpYXQiOjE3MzQ1MjE3NTQsImV4cCI6MTczNDUyNTM1NH0.C8GDJWzbdy0kbKiNFG6195DWroah6SQInp4OwCGJKNs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"karim@gmail.com\",\r\n    \"password\":\"karim123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/author/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"author",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logoutAuthor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/author/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"author",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refreshToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/author/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"author",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Synonyms",
+			"item": [
+				{
+					"name": "getAllSyns",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/synonym",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"synonym"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createSyn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"desc_id\":\"675c0714ac8d4bdcca899fc8\",\r\n    \"dict_id\": \"675ac5487b3f52839990b5f5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/synonym",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"synonym"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSynById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/synonym/675c14ef5260dd34eff5516d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"synonym",
+								"675c14ef5260dd34eff5516d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSyn",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/synonym/675c1e42cefdfc8bbfd9b09c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"synonym",
+								"675c1e42cefdfc8bbfd9b09c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSyn",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/synonym/675c1e42cefdfc8bbfd9b09c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"synonym",
+								"675c1e42cefdfc8bbfd9b09c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Social",
+			"item": [
+				{
+					"name": "createSocial",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"social_name\": \"Social name\",\r\n    \"social_icon_file\": \"Social file\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/social",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"social"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllSocials",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/social",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"social"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSocial",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/social",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"social"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSocial",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Topic",
+			"item": [
+				{
+					"name": "createTopic",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author_id\":\"675c304caa1569a1ab70a646\",\r\n    \"topic_title\": \"This is topic title\",\r\n    \"topic_text\": \"This is topic text\",\r\n    \"is_checked\": true,\r\n    \"is_approved\": true,\r\n    \"expert_id\": \"675c304caa1569a1ab70a646\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/topic",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"topic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllTopics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/topic",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"topic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTopic",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author_id\":\"675c304caa1569a1ab70a646\",\r\n    \"topic_title\": \"This is new topic title\",\r\n    \"topic_text\": \"This is new topic text\",\r\n    \"is_checked\": true,\r\n    \"is_approved\": true,\r\n    \"expert_id\": \"675c304caa1569a1ab70a646\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/topic/6760f7f573b13c6dd18cbcdb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"topic",
+								"6760f7f573b13c6dd18cbcdb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTopic",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/topic/6760f7f573b13c6dd18cbcdb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"topic",
+								"6760f7f573b13c6dd18cbcdb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tag",
+			"item": [
+				{
+					"name": "getAllTags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/tag",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"tag"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createTag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"topic_id\" : \"6760f7f573b13c6dd18cbcdb\",\r\n    \"category_id\": \"675bd0dfb0909dc60f574ae4-\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/tag",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"tag"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Author Socal",
+			"item": [
+				{
+					"name": "getAllAuthSocials",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/auth/social",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"social"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAuthSocial",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author_id\":\"675c304caa1569a1ab70a646\",\r\n    \"social_id\": \"675fd0b7d010f1e8a6947c56\",\r\n    \"social_link\":\"telegram.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/social",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"social"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAuthSocial",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author_id\":\"675c304caa1569a1ab70a646\",\r\n    \"social_id\": \"675fd0b7d010f1e8a6947c56\",\r\n    \"social_link\":\"new telegram.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/social/6762563f3189fb4b01db2483",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"social",
+								"6762563f3189fb4b01db2483"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAuthSocial",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/auth/social/6762558c09a9839f1c90f1db",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"social",
+								"6762558c09a9839f1c90f1db"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Lola\",\r\n    \"email\": \"lola@gmail.com\",\r\n    \"password\": \"lola123\",\r\n    \"info\": \"this is owned by Lola\",\r\n    \"photo\": \"photo.png\",\r\n    \"is_user_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjNhMTJjZTBlNWM4NWQ0YzM1ZjhjOCIsIm5hbWUiOiJMb2xhIiwiZW1haWwiOiJsb2xhQGdtYWlsLmNvbSIsImlhdCI6MTczNDU4MjcxNiwiZXhwIjoxNzM0NTgyNzMxfQ.4NN5Ow-hLwSQ9JwB2VtReqDEF-8r3AJSutPl2BIw-2s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"lola@gmail.com\",\r\n    \"password\":\"lola123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alibek\",\r\n    \"email\": \"ali@gmail.com\",\r\n    \"password\": \"ali123\",\r\n    \"info\": \"this is owned by Ali\",\r\n    \"photo\": \"photo.png\",\r\n    \"is_user_active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/user/676268ad91ed3002f399f2ec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user",
+								"676268ad91ed3002f399f2ec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/user/676268ad91ed3002f399f2ec",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user",
+								"676268ad91ed3002f399f2ec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logoutUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/user/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refreshToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/user/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjNhMTJjZTBlNWM4NWQ0YzM1ZjhjOCIsIm5hbWUiOiJMb2xhIiwiZW1haWwiOiJsb2xhQGdtYWlsLmNvbSIsImlhdCI6MTczNDg3ODAyOSwiZXhwIjoxNzM0ODgxNjI5fQ.xV7o7horbmnxqdWgeGoXvINuzgiojeFL2kZ588JNXzU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/user/6763a12ce0e5c85d4c35f8c8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user",
+								"6763a12ce0e5c85d4c35f8c8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "getAllAdmins",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjNhY2UxNTMxMTQ3YThkMTU5YjAzYSIsIm5hbWUiOiJLYW1vbCIsImVtYWlsIjoia2Ftb2xAZ21haWwuY29tIiwiaXNfYWN0aXZlIjp0cnVlLCJpYXQiOjE3MzQ2Njk0MjAsImV4cCI6MTczNDY3MzAyMH0.RO6o5RAiOorRpAaozCsxJI-QatiwmshRRBzJMEfrplE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jamol\",\r\n    \"email\": \"jamol@gmail.com\",\r\n    \"phone\": \"94-223-11-34\",\r\n    \"password\":\"jamol123\",\r\n    \"is_active\": true,\r\n    \"is_creator\": true\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/admin/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jamol@gmail.com\"\r\n    \"password\": \"jamol123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdminById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjUxMWM4NDYxMzUxNWY4ODQwNGE0NCIsIm5hbWUiOiJKYW1vbCIsImVtYWlsIjoiamFtb2xAZ21haWwuY29tIiwiaXNfYWN0aXZlIjp0cnVlLCJpYXQiOjE3MzQ4ODA1NjQsImV4cCI6MTczNDkxNjU2NH0.tU6zvb7XadQwd9uQyj6oWu-bUy65JxyHofqK1lAlRKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/admin/676511c84613515f88404a44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"admin",
+								"676511c84613515f88404a44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refreshToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/admin/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"admin",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logoutAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/admin/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"admin",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

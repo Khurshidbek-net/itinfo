@@ -1,0 +1,10 @@
+2024-12-23T11:21:58.670Z error: unhandledRejection: unhandledRejection example
+Error: unhandledRejection example
+    at C:\Users\admin\Desktop\Node js\ITINFO\controllers\author.controller.js:96:14
+    at new Promise (<anonymous>)
+    at loginAuthor (C:\Users\admin\Desktop\Node js\ITINFO\controllers\author.controller.js:95:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-12-24T17:43:54.288Z error: unhandledRejection: rr is not defined
+ReferenceError: rr is not defined
+    at getAllTerms (C:\Users\admin\Desktop\Node js\ITINFO\controllers\dictionary.controller.js:12:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
