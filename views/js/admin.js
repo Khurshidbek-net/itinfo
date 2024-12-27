@@ -21,7 +21,7 @@ async function getAdmins() {
   }
 
   try {
-    const response = await fetch("http://localhost:4000/api/admin",{
+    const response = await fetch("http://45.138.158.154:4000/api/admin",{
       method: "GET",
       headers:{
         Authorization: `Bearer ${accessToken}`,
@@ -84,7 +84,7 @@ async function loginAdmin() {
     const password = document.getElementById("password").value;
 
     try {
-      const response = await fetch("http://localhost:4000/api/admin/login", {
+      const response = await fetch("http://45.138.158.154:4000/api/admin/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -122,7 +122,7 @@ function getTokenExpTime(token){
 
 async function refreshToken() {
   try {
-    const response = await fetch("http://localhost:4000/api/admin/refresh",{
+    const response = await fetch("http://45.138.158.154:4000/api/admin/refresh",{
       method: "POST",
       headers: {"Content-Type":"application/json"}
     });
@@ -155,7 +155,7 @@ async function createAdmin() {
     const is_creator = document.getElementById("is_creator").checked;
 
     try {
-      const response = await fetch("http://localhost:4000/api/admin/register",{
+      const response = await fetch("http://45.138.158.154:4000/api/admin/register",{
         method: "POST",
         headers:{
           "Content-Type":"application/json"

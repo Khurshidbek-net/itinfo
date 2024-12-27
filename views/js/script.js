@@ -19,7 +19,7 @@ async function getAuthors() {
   }
 
 
-  fetch("http://localhost:4000/api/author",{
+  fetch("http://45.138.158.154:4000/api/author",{
     method: "GET",
     headers:{
       Authorization: `Bearer ${accessToken}`,
@@ -61,7 +61,7 @@ function getTokenExpTime(token){
 
 async function refreshToken() {
   try {
-    const response = await fetch("http://localhost:4000/api/author/refresh", {
+    const response = await fetch("http://45.138.158.154:4000/api/author/refresh", {
       method: "POST",
       headers: {"Content-Type":"application/json"}
     });
